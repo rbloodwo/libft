@@ -1,11 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbloodwo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/09 00:53:25 by rbloodwo          #+#    #+#             */
+/*   Updated: 2018/05/09 00:53:27 by rbloodwo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-/*
-The strcat() and strncat() functions append a copy of the null-terminated
-string s2 to the end of the null-terminated string s1, then add a terminating `\0'. 
-The string s1 must have sufficient space to hold the result.
-The strncat() function appends not more than n characters from s2, and then adds a terminating `\0'.
- */
+#include "libft.h"
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {

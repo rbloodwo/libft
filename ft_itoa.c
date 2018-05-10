@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbloodwo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/09 00:42:07 by rbloodwo          #+#    #+#             */
+/*   Updated: 2018/05/09 00:42:11 by rbloodwo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char	*ft_itoa(int n) // KEEP
+char	*ft_itoa(int n)
 {
 	char *str;
 
@@ -12,7 +24,7 @@ char	*ft_itoa(int n) // KEEP
 	if (n < 0)
 	{
 		str[0] = '-';
-		str[1] = '\0'; // this is here because ft_strjoin requires input to have null terminating character?
+		str[1] = '\0';
 		str = ft_strjoin(str, ft_itoa(-n));
 	}
 	else if (n >= 10)

@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbloodwo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/09 00:55:15 by rbloodwo          #+#    #+#             */
+/*   Updated: 2018/05/09 00:55:19 by rbloodwo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int		wordcount(char const *s, char c) // KEEP
+static	unsigned int	wordcount(char const *s, char c)
 {
 	unsigned int i;
 	unsigned int count;
@@ -20,7 +31,7 @@ static unsigned int		wordcount(char const *s, char c) // KEEP
 	return (count);
 }
 
-static char 	*ft_strndup(const char *s, size_t n) // KEEP
+static	char			*ft_strndup(const char *s, size_t n)
 {
 	char *dest;
 
@@ -32,31 +43,29 @@ static char 	*ft_strndup(const char *s, size_t n) // KEEP
 	return (dest);
 }
 
-char 	**ft_strsplit(char const *s, char c) // KEEP
+char					**ft_strsplit(char const *s, char c)
 {
-	int i;
-	int j;
-	int k;
-	char **str;
+	int		i;
+	int		j;
+	int		k;
+	char	**str;
 
 	i = 0;
 	k = 0;
-	str = (char **)malloc(sizeof(char *) * (wordcount(s,c)) + 1);
+	if (!s)
+		return (NULL);
+	str = (char **)malloc(sizeof(char *) * (wordcount(s, c)) + 1);
 	if (str == NULL)
 		return (NULL);
-
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		while (s[i] == c)
 			i++;
 		j = i;
 		while (s[i] != c && s[i])
 			i++;
-		if (i > j) // maybe if (i >= j)
-		{
-			str[k] = ft_strndup(s + j, i - j);
-			k++;
-		}
+		if (i > j)
+			str[k++] = ft_strndup(s + j, i - j);
 		str[k] = NULL;
 	}
 	return (str);

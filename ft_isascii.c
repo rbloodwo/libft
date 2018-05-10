@@ -1,8 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbloodwo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/09 00:41:05 by rbloodwo          #+#    #+#             */
+/*   Updated: 2018/05/09 00:41:30 by rbloodwo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-/*
-The isascii() function tests for an ASCII character, 
-which is any character between 0 and decimal 127 inclusive.
-*/
 
 int	ft_isascii(int c)
 {
